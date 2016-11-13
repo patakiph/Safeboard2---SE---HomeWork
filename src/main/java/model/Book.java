@@ -86,7 +86,8 @@ public class Book {
     @Override
     public String toString() {
         String str = "id = " + id +
-                "; name = " + name;
+                "; name = " + name+
+        "; is Taken = " + isTaken;
         return str;
     }
 
