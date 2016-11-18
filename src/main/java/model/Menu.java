@@ -15,7 +15,31 @@ public class Menu {
     private static HashMap<String, Book> books = new HashMap<>();
 
     public Menu() {
-        Initialize.initialize(users, books);
+        Data1 d1 = null;
+        Data2 d2 = null;
+        Data3 d3 = null;
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("What data source would you like to use? (1,2,3)");
+            String a = sc.nextLine();
+            if (a.equals("1")){
+                d1 = new Data1();
+                books = d1.getBooks();
+                break;
+            } else if (a.equals("2")) {
+                d2 = new Data2();
+                books = d2.getBooks();
+                break;
+            } else if (a.equals("3")) {
+                d3 = new Data3();
+                books = d3.getBooks();
+                break;
+            } else {
+                System.out.println("Wrong input! Type 1, 2 or 3.");
+            }
+
+        }
+        InitializeUsers.initialize(users, books);
         menu.add(new MenuEntry("List Books - press 1") {
             @Override
             public void run() {

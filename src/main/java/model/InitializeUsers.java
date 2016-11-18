@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * Created by Ольга on 10.11.2016.
  */
-public class Initialize {
+public class InitializeUsers {
     public static void initialize(HashMap<String, User> users, HashMap<String, Book> books){
         User user1 = new User("Михаил Лермонтов");
         user1.setEmail("lermontov@safeboard.ru").setId(1);
@@ -40,43 +40,14 @@ public class Initialize {
         user10.setEmail("cookie@safeboard.ru").setId(10);
         users.put("Печенька с вареньем",user10);
 
-        Book book1 = new Book("\"Герой нашего времени\"");
-        book1.setId(1);
-        books.put("\"Герой нашего времени\"",book1);
-        Book book2 = new Book("\"Вы конечно шутите, мистер Фейнман\"");
-        book2.setId(2);
-        books.put("\"Вы конечно шутите, мистер Фейнман\"",book2);
-        Book book3 = new Book("\"1984\"");
-        book3.setId(3);
-        books.put("\"1984\"",book3);
-        Book book4 = new Book("\"Ворон\"");
-        book4.setId(4);
-        books.put("\"Ворон\"",book4);
-        Book book5 = new Book("\"Мифы Древней Греции\"");
-        book5.setId(5);
-        books.put("\"Мифы Древней Греции\"",book5);
-        Book book6 = new Book("\"Гарри Поттер и философский камень\"");
-        book6.setId(6);
-        books.put("\"Гарри Поттер и философский камень\"",book6);
-        Book book7 = new Book("\"Портрет Дориана Грея\"");
-        book7.setId(7);
-        books.put("\"Портрет Дориана Грея\"",book7);
-        Book book8 = new Book("\"Туманность Андромеды\"");
-        book8.setId(8);
-        books.put("\"Туманность Андромеды\"",book8);
-        Book book9 = new Book("\"Час Быка\"");
-        book9.setId(9);
-        books.put("\"Час Быка\"",book9);
-        Book book10 = new Book("\"Таис Афинская\"");
-        book10.setId(10);
-        books.put("\"Таис Афинская\"",book10);
+
         GregorianCalendar date = new GregorianCalendar();
         date.add(Calendar.MONTH,-2);
-        user1.addBook(book1,date);
-        user1.addBook(book2,date);
+        user1.addBook((Book) books.values().toArray()[0],date);
+        user1.addBook((Book) books.values().toArray()[1],date);
         date.add(Calendar.MONTH,1);
-        user2.addBook(book3,date);
+        user2.addBook((Book) books.values().toArray()[2],date);
         date.add(Calendar.MONTH,-3);
-        user3.addBook(book4,date);
+        user3.addBook((Book) books.values().toArray()[3],date);
     }
 }
